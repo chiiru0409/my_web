@@ -16,12 +16,43 @@
 
   <link rel="stylesheet" href="css/style.css">
 
+  <script src="js/lenis.min.js"></script>
   <script src="js/script.js" defer></script>
 </head>
 
 <body>
+  <!-- Top Global Scroll Progress Scrubber Bar -->
+  <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
+
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <!-- Fixed Cinematic Section Tracker (CivicResolve-Inspired HUD) -->
+  <aside class="cinematic-track" aria-label="Section navigation">
+    <div class="cinematic-counter" aria-hidden="true">
+      <span class="active-sec-num">01</span><span class="sec-total">/05</span>
+    </div>
+    <div class="cinematic-progress-bar" aria-hidden="true">
+      <div class="cinematic-progress-fill"></div>
+    </div>
+    <div class="cinematic-dots" role="navigation" aria-label="Quick section navigation">
+      <button class="track-dot active" data-target="#home" aria-label="Jump to Home">
+        <span class="dot-tooltip">00 // HOME</span>
+      </button>
+      <button class="track-dot" data-target="#about" aria-label="Jump to About">
+        <span class="dot-tooltip">01 // DRIVER</span>
+      </button>
+      <button class="track-dot" data-target="#skills" aria-label="Jump to Skills">
+        <span class="dot-tooltip">02 // TOOLKIT</span>
+      </button>
+      <button class="track-dot" data-target="#projects" aria-label="Jump to Projects">
+        <span class="dot-tooltip">03 // GARAGE</span>
+      </button>
+      <button class="track-dot" data-target="#contact" aria-label="Jump to Contact">
+        <span class="dot-tooltip">04 // NEXT MOVE</span>
+      </button>
+    </div>
+  </aside>
 
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Chirudeep home">
@@ -136,7 +167,7 @@
       </div>
 
       <div class="about-layout">
-        <div class="about-intro reveal">
+        <div class="about-intro reveal reveal-left">
           <p class="large-copy">
             Curious mind. <span class="text-accent">Builder mindset.</span>
             Always learning.
@@ -154,8 +185,8 @@
           </p>
         </div>
 
-        <div class="about-details reveal">
-          <div class="detail-row">
+        <div class="about-details reveal reveal-right">
+          <div class="detail-row reveal delay-100">
             <span>01</span>
             <div>
               <h3>AI & INTELLIGENT SYSTEMS</h3>
@@ -163,7 +194,7 @@
             </div>
           </div>
 
-          <div class="detail-row">
+          <div class="detail-row reveal delay-200">
             <span>02</span>
             <div>
               <h3>FULL-STACK DEVELOPMENT</h3>
@@ -171,7 +202,7 @@
             </div>
           </div>
 
-          <div class="detail-row">
+          <div class="detail-row reveal delay-300">
             <span>03</span>
             <div>
               <h3>BUILD · TEST · ITERATE</h3>
@@ -192,37 +223,37 @@
       </div>
 
       <div class="skills-grid">
-        <article class="skill-card reveal">
+        <article class="skill-card reveal reveal-scale delay-100">
           <span class="card-index">01</span>
           <h3>PROGRAMMING</h3>
           <p>Python · Java · C · JavaScript</p>
         </article>
 
-        <article class="skill-card reveal">
+        <article class="skill-card reveal reveal-scale delay-200">
           <span class="card-index">02</span>
           <h3>WEB DEVELOPMENT</h3>
           <p>HTML · CSS · React · TypeScript · Express</p>
         </article>
 
-        <article class="skill-card reveal">
+        <article class="skill-card reveal reveal-scale delay-300">
           <span class="card-index">03</span>
           <h3>AI & MACHINE LEARNING</h3>
           <p>LLMs · AI agents · NLP · ML fundamentals</p>
         </article>
 
-        <article class="skill-card reveal">
+        <article class="skill-card reveal reveal-scale delay-400">
           <span class="card-index">04</span>
           <h3>BACKEND & DATA</h3>
           <p>FastAPI · SQL · PostgreSQL · SQLite</p>
         </article>
 
-        <article class="skill-card reveal">
+        <article class="skill-card reveal reveal-scale delay-500">
           <span class="card-index">05</span>
           <h3>ANDROID DEVELOPMENT</h3>
           <p>Kotlin · Jetpack Compose · Android Studio</p>
         </article>
 
-        <article class="skill-card reveal">
+        <article class="skill-card reveal reveal-scale delay-600">
           <span class="card-index">06</span>
           <h3>DEVELOPER TOOLS</h3>
           <p>Git · GitHub · VS Code · Linux</p>
@@ -240,7 +271,7 @@
       </div>
 
       <div class="projects-grid">
-        <article class="project-card project-featured reveal">
+        <article class="project-card project-featured reveal reveal-scale">
           <div class="project-topline">
             <span>PROJECT / 01</span>
             <span class="project-status">IN DEVELOPMENT</span>
@@ -269,7 +300,7 @@
           </div>
         </article>
 
-        <article class="project-card reveal">
+        <article class="project-card reveal reveal-left delay-100">
           <div class="project-topline">
             <span>PROJECT / 02</span>
             <span class="project-status">IN DEVELOPMENT</span>
@@ -296,7 +327,7 @@
           </div>
         </article>
 
-        <article class="project-card reveal">
+        <article class="project-card reveal reveal-right delay-200">
           <div class="project-topline">
             <span>PROJECT / 03</span>
             <span class="project-status">PROTOTYPE</span>
@@ -331,7 +362,7 @@
     </section>
 
     <section id="contact" class="section contact-section">
-      <div class="contact-panel reveal">
+      <div class="contact-panel reveal reveal-scale">
         <p class="eyebrow">04 / THE NEXT MOVE</p>
         <h2>HAVE AN IDEA?<br><span class="text-accent">LET'S BUILD IT.</span></h2>
         <p>
